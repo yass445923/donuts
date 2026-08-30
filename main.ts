@@ -1,5 +1,5 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.startCountdown(10)
+    info.startCountdown(5)
     donuts.setPosition(randint(0, 100), randint(0, 100))
     info.changeScoreBy(1)
 })
