@@ -7,6 +7,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     game.gameOver(false)
 })
 let donuts: Sprite = null
+game.splash("take the donuts with homer")
 let myMenu = miniMenu.createMenu(
 miniMenu.createMenuItem("mmmh the donuts")
 )
