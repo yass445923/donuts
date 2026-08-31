@@ -1,13 +1,13 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.startCountdown(5)
-    donuts.setPosition(randint(0, 100), randint(0, 100))
     info.changeScoreBy(1)
+    donuts.setPosition(randint(0, 100), randint(0, 100))
+    info.changeCountdownBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.gameOver(false)
 })
 let donuts: Sprite = null
-game.splash("take the donuts with homer")
+game.splash("Eat the donuts with Homer")
 let myMenu = miniMenu.createMenu(
 miniMenu.createMenuItem("mmmh the donuts")
 )
@@ -88,11 +88,14 @@ let OPERATORE = sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Enemy)
+info.setScore(0)
 OPERATORE.setPosition(149, 106)
 controller.moveSprite(homer)
 scene.setBackgroundColor(9)
 homer.setBounceOnWall(true)
 OPERATORE.follow(homer, 50)
+donuts.setPosition(randint(16, 84), randint(16, 84))
+info.startCountdown(10)
 forever(function () {
     OPERATORE.setBounceOnWall(true)
 })
