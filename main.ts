@@ -7,6 +7,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     game.gameOver(false)
 })
 let donuts: Sprite = null
+let myMenu = miniMenu.createMenu(
+miniMenu.createMenuItem("mmmh the donuts")
+)
+myMenu.setPosition(77, 112)
 let homer = sprites.create(img`
     ..............................
     ...........fffffff............
@@ -83,7 +87,7 @@ let OPERATORE = sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Enemy)
-OPERATORE.setPosition(136, 91)
+OPERATORE.setPosition(149, 106)
 controller.moveSprite(homer)
 scene.setBackgroundColor(9)
 homer.setBounceOnWall(true)
